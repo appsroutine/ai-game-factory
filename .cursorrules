@@ -1,0 +1,18 @@
+# AI Game Factory v3 - Studio System Rules
+
+## Core Rules
+- Her görevde değişen dosyaları madde madde özetle, dosya ağacını güncelle.
+- Unity meta/GUID dosyalarını koru, binary diff yok.
+- Runbook'larda PROMPT bloklarını üç tırnak arasında ver.
+
+## Quality Gates
+- QA score < 0.85 ise tuning PR'siz merge etme.
+
+## Commit Format
+[AUTO][{GAME}] FEEL={score} QA={score} BUILD={n}
+
+## Studio System Guidelines
+- Tüm agent'lar .cursor/agents/ altında tanımlı
+- Pipeline'lar factory/pipelines/ altında runbook formatında
+- Memory sync docs/MEMORY.json ile yapılır
+- Her build'de FEEL ve QA skorları zorunlu
