@@ -17,7 +17,7 @@ Konsept fikrinden Game Design Document'a dönüştürme süreci.
 - Hedef platform
 
 ## Output Deliverables
-- Game Design Document (GDD)
+- docs/GDD.md (Loop, USP, 30/90sn his hedefi, risk analizi)
 - Mekanik spesifikasyonları
 - Prototip planı
 - Risk değerlendirmesi
@@ -31,10 +31,6 @@ Konsept fikrinden Game Design Document'a dönüştürme süreci.
 ## PROMPT BLOĞU
 """
 [TO=GameDirector]
-(1) Konsept fikrini analiz et ve geliştir
-(2) Hedef kitleyi tanımla ve segmentasyon yap
-(3) Core loop tasarımını oluştur
-(4) Mekanik spesifikasyonlarını detaylandır
-(5) Prototip stratejisini planla
-(Çıktıları şu dosyalara yaz: docs/GDD.md, docs/mechanics.md, docs/prototype_plan.md)
+- Verilen fikirden GDD üret. dosya: docs/GDD.md
+- USP ve golden-screenshot senaryolarını ekle (5 örnek)
 """

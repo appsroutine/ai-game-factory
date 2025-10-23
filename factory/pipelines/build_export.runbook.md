@@ -17,6 +17,8 @@ Build süreçlerinin yönetimi, release hazırlığı ve dağıtım otomasyonu s
 - Release gereksinimleri
 
 ## Output Deliverables
+- builds/iOS/StackSlice-Xcode/ (iOS export)
+- docs/BUILD_IOS.md (build dokümantasyonu)
 - Build dosyaları
 - Release paketleri
 - Dağıtım konfigürasyonları
@@ -31,10 +33,5 @@ Build süreçlerinin yönetimi, release hazırlığı ve dağıtım otomasyonu s
 ## PROMPT BLOĞU
 """
 [TO=BuildMaster]
-(1) Build konfigürasyonunu hazırla
-(2) Otomatik build sürecini çalıştır
-(3) Kalite kontrol yap
-(4) Release paketlerini hazırla
-(5) Dağıtım süreçlerini yönet
-(Çıktıları şu dosyalara yaz: builds/, releases/, docs/build_report.md)
+- iOS export hazırla (Xcode projesi). Arm64/IL2CPP/Metal.
 """

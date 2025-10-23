@@ -15,6 +15,21 @@ Unity projesi geliştirme, teknik implementasyon ve optimizasyon.
 - Optimizasyon raporları
 - Build konfigürasyonları
 
+## Performans Hedefleri
+- **FPS**: 60fps hedef
+- **GC Alloc**: near 0/frame
+- **iOS**: IL2CPP, Arm64, Metal, Bitcode off
+
+## Sahne Sözleşmesi
+- **Bootstrap.unity** → **Main.unity** (ana oyun sahnesi)
+
+## Kod Sözleşmesi
+- **Core/**: Temel sistemler
+- **Gameplay/**: Oyun mekanikleri
+- **Input/**: Girdi yönetimi
+- **FX/**: Efektler ve görsel
+- **UI/**: Kullanıcı arayüzü
+
 ## Adımlar
 1. Proje yapısı kurulumu
 2. Core sistemler implementasyonu

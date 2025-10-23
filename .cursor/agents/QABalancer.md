@@ -10,10 +10,19 @@ Otomatik kalite kontrol, test otomasyonu ve QA süreçlerinin yönetimi.
 - Performans metrikleri
 
 ## Çıktı
-- QA raporları
-- Bug raporları
-- Performans analizi
-- Kalite skorları
+- docs/QA_Report.csv (detaylı metrikler)
+- docs/QA.md (özet rapor)
+
+## Metrikler
+- **avg_session**: Ortalama oyun süresi
+- **restart_rate**: Yeniden başlatma oranı
+- **fail_point**: Başarısızlık noktaları
+- **perfect_per_min**: Dakikada mükemmel oynanış sayısı
+
+## Bot Davranışı
+- **Başarı Oranı**: %70
+- **Perfect Oranı**: %10
+- **Jitter**: ±8% (doğal varyasyon)
 
 ## Adımlar
 1. Otomatik test çalıştırma

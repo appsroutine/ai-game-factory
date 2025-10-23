@@ -31,10 +31,5 @@ Oynanabilirlik optimizasyonu ve oyuncu deneyimi iyileştirme süreci.
 ## PROMPT BLOĞU
 """
 [TO=FeelOptimizer]
-(1) Oynanabilirlik analizi yap
-(2) Oyuncu davranış verilerini analiz et
-(3) FEEL skorunu hesapla
-(4) Optimizasyon önerilerini geliştir
-(5) İyileştirmeleri implement et
-(Çıktıları şu dosyalara yaz: reports/feel_analysis.md, reports/optimization_plan.md, reports/player_experience.md)
+- QA verisinden FEEL score hesapla; tuning PR listesi çıkar; FEEL_REPORT.md yaz.
 """

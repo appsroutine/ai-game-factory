@@ -31,10 +31,5 @@ Otomatik kalite kontrol ve test süreçlerinin yönetimi.
 ## PROMPT BLOĞU
 """
 [TO=QABalancer]
-(1) Test senaryolarını hazırla ve çalıştır
-(2) Performans analizi yap
-(3) Bug tespiti ve raporlama yap
-(4) Kalite skorunu hesapla
-(5) İyileştirme önerilerini hazırla
-(Çıktıları şu dosyalara yaz: reports/qa_report.md, reports/bugs.md, reports/performance.md)
+- 30 tur autoplay çalıştır; CSV ve QA.md üret.
 """

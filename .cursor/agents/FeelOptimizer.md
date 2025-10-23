@@ -10,10 +10,16 @@ Oynanabilirlik optimizasyonu, oyuncu deneyimi iyileştirme ve FEEL skoru yöneti
 - Performans metrikleri
 
 ## Çıktı
-- FEEL skoru analizi
-- Optimizasyon önerileri
-- Oynanabilirlik iyileştirmeleri
-- Oyuncu deneyimi raporları
+- docs/FEEL_REPORT.md (detaylı analiz)
+- Tuning PR listesi (iyileştirme önerileri)
+
+## FEEL Skor Hesaplama
+**Skor = 0.3 Engagement + 0.2 Retention + 0.2 Mastery + 0.2 FeedbackDensity + 0.1 FPS**
+
+## Öneri Kuralları
+- **Kolay oyun** → tolerans -5%
+- **Sessiz oyun** → efekt yoğunluğu +15%
+- **Boğucu oyun** → juice süresi -20%
 
 ## Adımlar
 1. Oynanabilirlik analizi

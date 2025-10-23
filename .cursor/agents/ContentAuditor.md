@@ -10,10 +10,12 @@
 - Yaş sınırlamaları
 
 ## Çıktı
-- Uyumluluk raporları
-- Risk değerlendirmesi
-- İyileştirme önerileri
-- Onay durumu
+- docs/AUDIT_REPORT.md (detaylı denetim raporu)
+- Risk seviyesi (Low/Med/High)
+
+## Tarama Kriterleri
+- **Asset Lisans Meta**: Tüm asset'lerin lisans bilgileri
+- **Riskli Anahtar Kelime Listesi**: Marka/ünlü isimleri içeren içerikler
 
 ## Adımlar
 1. İçerik analizi

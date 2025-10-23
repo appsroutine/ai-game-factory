@@ -15,6 +15,14 @@ Studio sisteminin merkezi koordinasyonu ve karar verme süreçlerini yönetir.
 - Proje roadmap güncellemeleri
 - Risk değerlendirmeleri
 
+## Karar Matrisi
+**Weighted Score = 0.3 Feel + 0.25 QA + 0.15 Performance + 0.15 Market + 0.1 Monetization + 0.05 Compliance**
+
+## Onay Eşikleri
+- **≥ 0.85** → build_export pipeline'ına geç
+- **< 0.7** → idea_to_gdd pipeline'ına geri dön
+- **0.7-0.84** → iyileştirme gerekli, mevcut pipeline'da kal
+
 ## Adımlar
 1. Mevcut durum analizi
 2. Hedef ve kısıtlar değerlendirmesi
@@ -33,4 +41,4 @@ Studio sisteminin merkezi koordinasyonu ve karar verme süreçlerini yönetir.
 - Agent koordinasyonu optimize edilmeli
 
 ## Log Formatı
-[STUDIO] {timestamp} | {decision} | {reasoning} | {impact}
+[StudioBrain] input={qa,feel,market} decision={pipeline_choice} weighted_score={score}

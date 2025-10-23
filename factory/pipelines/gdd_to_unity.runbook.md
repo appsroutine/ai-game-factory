@@ -17,6 +17,7 @@ Game Design Document'tan Unity implementasyonuna dönüştürme süreci.
 - Asset gereksinimleri
 
 ## Output Deliverables
+- templates/unity-mobile-urp proje içine Scripts/Scenes kurulum
 - Unity proje dosyaları
 - Script implementasyonları
 - Asset pipeline
@@ -31,10 +32,7 @@ Game Design Document'tan Unity implementasyonuna dönüştürme süreci.
 ## PROMPT BLOĞU
 """
 [TO=UnityEngineer]
-(1) GDD'yi teknik açıdan analiz et
-(2) Unity proje yapısını kur
-(3) Core sistemleri implement et
-(4) Oyun mekaniklerini kodla
-(5) Optimizasyon ve test yap
-(Çıktıları şu dosyalara yaz: unity/Assets/, unity/ProjectSettings/, docs/technical_specs.md)
+- GDD'yi baz alıp Main.unity'de oynar çekirdek kur.
+- Prefab, Input, Score, DifficultyRamp, Juice; iOS PlayerSettings'i hazırla.
+- Dosyaları templates/unity-mobile-urp/ altına yaz.
 """
