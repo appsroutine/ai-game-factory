@@ -10,9 +10,9 @@ namespace UI
     public class HUD : MonoBehaviour
     {
         [Header("UI References")]
-        [SerializeField] private TextMeshProUGUI scoreText;
-        [SerializeField] private TextMeshProUGUI comboText;
-        [SerializeField] private TextMeshProUGUI timeText;
+        [SerializeField] private TMP_Text scoreText;
+        [SerializeField] private TMP_Text comboText;
+        [SerializeField] private TMP_Text timeText;
         [SerializeField] private Slider progressBar;
         [SerializeField] private Button startButton;
         [SerializeField] private Button pauseButton;
@@ -37,19 +37,18 @@ namespace UI
         private ScoreSystem scoreSystem;
         private Core.Game gameInstance;
         
-        private void Start()
+        void OnEnable()
         {
-            // Get references
-            scoreSystem = FindObjectOfType<ScoreSystem>();
-            gameInstance = Core.Game.Instance;
-            
-            // Subscribe to events
-            if (scoreSystem != null)
+            var s = ScoreSystem.Instance;
+            if (s != null)
             {
-                scoreSystem.OnScoreChanged.AddListener(OnScoreChanged);
-                scoreSystem.OnComboChanged.AddListener(OnComboChanged);
+                s.OnScoreChanged += HandleScore;
+                s.OnComboChanged += HandleCombo;
+                HandleScore(s.CurrentScore);
+                HandleCombo(s.CurrentCombo);
             }
             
+            gameInstance = Core.Game.Instance;
             if (gameInstance != null)
             {
                 gameInstance.OnGameStart.AddListener(OnGameStart);
@@ -59,6 +58,23 @@ namespace UI
             
             // Setup UI
             SetupUI();
+        }
+
+        void OnDisable()
+        {
+            var s = ScoreSystem.Instance;
+            if (s != null)
+            {
+                s.OnScoreChanged -= HandleScore;
+                s.OnComboChanged -= HandleCombo;
+            }
+            
+            if (gameInstance != null)
+            {
+                gameInstance.OnGameStart.RemoveListener(OnGameStart);
+                gameInstance.OnGameOver.RemoveListener(OnGameOver);
+                gameInstance.OnGameRestart.RemoveListener(OnGameRestart);
+            }
         }
         
         private void Update()
@@ -98,7 +114,9 @@ namespace UI
             // Update score
             if (showScore && scoreText != null)
             {
-                scoreText.text = $"Score: {currentScore}";
+                var s = ScoreSystem.Instance;
+                int score = s != null ? s.CurrentScore : currentScore;
+                scoreText.text = $"Score: {score}";
                 scoreText.color = scoreColor;
             }
             
@@ -132,6 +150,16 @@ namespace UI
                 float progress = Mathf.Clamp01(currentScore / 1000f);
                 progressBar.value = progress;
             }
+        }
+        
+        void HandleScore(int value) 
+        { 
+            if (scoreText) scoreText.text = value.ToString(); 
+        }
+        
+        void HandleCombo(int value) 
+        { 
+            if (comboText) comboText.text = value > 0 ? $"x{value}" : ""; 
         }
         
         private void OnScoreChanged(int newScore)

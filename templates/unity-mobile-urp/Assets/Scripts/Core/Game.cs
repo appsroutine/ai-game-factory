@@ -50,6 +50,11 @@ namespace Core
         
         private void Start()
         {
+            Invoke(nameof(BeginPlay), gameStartDelay);
+        }
+
+        private void BeginPlay()
+        {
             SetState(GameState.Ready);
         }
         

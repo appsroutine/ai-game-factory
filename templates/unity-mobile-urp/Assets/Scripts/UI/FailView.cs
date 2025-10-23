@@ -11,10 +11,12 @@ namespace UI
     {
         [Header("UI References")]
         [SerializeField] private GameObject failPanel;
-        [SerializeField] private TextMeshProUGUI finalScoreText;
-        [SerializeField] private TextMeshProUGUI highScoreText;
-        [SerializeField] private TextMeshProUGUI gameTimeText;
-        [SerializeField] private TextMeshProUGUI comboText;
+        [SerializeField] private TMP_Text finalScoreText;
+        [SerializeField] private TMP_Text highScoreText;
+        [SerializeField] private TMP_Text gameTimeText;
+        [SerializeField] private TMP_Text comboText;
+        [SerializeField] private TMP_Text bestText;
+        [SerializeField] private TMP_Text lastText;
         [SerializeField] private Button restartButton;
         [SerializeField] private Button menuButton;
         [SerializeField] private Button shareButton;
@@ -39,13 +41,16 @@ namespace UI
         private Core.Game gameInstance;
         private ScoreSystem scoreSystem;
         
-        private void Start()
+        void OnEnable()
         {
-            // Get references
-            gameInstance = Core.Game.Instance;
-            scoreSystem = FindObjectOfType<ScoreSystem>();
+            var s = ScoreSystem.Instance;
+            if (s != null)
+            {
+                if (bestText) bestText.text = s.BestScore.ToString();
+                if (lastText) lastText.text = s.CurrentScore.ToString();
+            }
             
-            // Subscribe to events
+            gameInstance = Core.Game.Instance;
             if (gameInstance != null)
             {
                 gameInstance.OnGameOver.AddListener(ShowFailView);
@@ -90,10 +95,11 @@ namespace UI
                 finalGameTime = gameInstance.GameTime;
             }
             
-            if (scoreSystem != null)
+            var s = ScoreSystem.Instance;
+            if (s != null)
             {
-                finalCombo = scoreSystem.CurrentCombo;
-                highScore = scoreSystem.GetHighScore();
+                finalCombo = 0; // ScoreSystem doesn't have CurrentCombo, using 0 for now
+                highScore = s.BestScore;
             }
             
             // Update UI

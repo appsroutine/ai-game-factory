@@ -39,7 +39,8 @@ namespace Gameplay.StackSlice
         private void SetupCutLine()
         {
             cutLine.material = new Material(Shader.Find("Sprites/Default"));
-            cutLine.color = cutLineColor;
+            cutLine.startColor = cutLineColor;
+            cutLine.endColor = cutLineColor;
             cutLine.startWidth = cutLineWidth;
             cutLine.endWidth = cutLineWidth;
             cutLine.positionCount = 2;

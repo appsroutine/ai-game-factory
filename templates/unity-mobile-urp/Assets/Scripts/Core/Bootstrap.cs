@@ -1,43 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-namespace Core
+public class Bootstrap : MonoBehaviour
 {
-    /// <summary>
-    /// Bootstrap script that initializes the game and loads the main scene
-    /// </summary>
-    public class Bootstrap : MonoBehaviour
+    [SerializeField] private string firstScene = "Main";
+    [SerializeField] private float delay = 0.05f;
+    private void Start()
     {
-        [Header("Bootstrap Settings")]
-        [SerializeField] private string mainSceneName = "Main";
-        [SerializeField] private float loadDelay = 1f;
-        
-        private void Start()
-        {
-            // Initialize game systems
-            InitializeGame();
-            
-            // Load main scene after delay
-            Invoke(nameof(LoadMainScene), loadDelay);
-        }
-        
-        private void InitializeGame()
-        {
-            // Set target framerate for mobile
-            Application.targetFrameRate = 60;
-            
-            // Initialize input system
-            Input.multiTouchEnabled = true;
-            
-            // Initialize audio system
-            AudioListener.volume = 1f;
-            
-            Debug.Log("[Bootstrap] Game initialized successfully");
-        }
-        
-        private void LoadMainScene()
-        {
-            SceneManager.LoadScene(mainSceneName);
-        }
+        UnityEngine.Input.multiTouchEnabled = false;
+        Invoke(nameof(LoadNext), delay);
+    }
+    private void LoadNext()
+    {
+        if (!string.IsNullOrEmpty(firstScene)) SceneManager.LoadScene(firstScene);
     }
 }
