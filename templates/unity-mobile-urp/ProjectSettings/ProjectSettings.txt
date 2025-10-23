@@ -1,0 +1,29 @@
+# Unity iOS Project Settings Configuration
+# Stack & Slice - Mobile Game
+
+## iOS Build Settings
+- Scripting Backend: IL2CPP
+- Architecture: ARM64
+- Graphics API: Metal (Auto)
+- Bitcode: Disabled
+- Orientation: Portrait
+- Target iOS Version: 12.0+
+
+## Performance Settings
+- Target FPS: 60
+- VSync: Off (Manual framerate control)
+- GPU Skinning: Enabled
+- Graphics Jobs: Enabled
+- Multithreaded Rendering: Enabled
+
+## Memory Settings
+- Graphics Memory: Optimized
+- Texture Compression: ASTC
+- Mipmap Stripping: Enabled
+- GC Mode: Incremental
+
+## Additional Settings
+- Bundle Identifier: com.gamefactory.stackslice
+- Version: 1.0.0
+- Company Name: Game Factory
+- Product Name: Stack & Slice
