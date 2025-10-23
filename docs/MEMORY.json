@@ -1,0 +1,17 @@
+{
+  "active_game": null,
+  "build": 0,
+  "last_qa": 0.6004333333333335,
+  "last_feel": 0.5170443384983854,
+  "pending": [
+    {
+      "timestamp": "2025-10-23T23:11:31.002337",
+      "decision": "RETURN_TO_GDD",
+      "weighted_score": 0.670221634882849,
+      "qa_score": 0.6004333333333335,
+      "feel_score": 0.5170443384983854,
+      "reasoning": "Weighted score 0.670 below tuning threshold 0.7",
+      "next_action": "Return to idea_to_gdd.runbook with tuning parameters"
+    }
+  ]
+}
